@@ -11,6 +11,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
+import { paymentReport, onlinePayment } from '@/routes/student'
 import { type NavItem, type NavGroup } from '@/types';
 import { Link } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
@@ -29,12 +30,12 @@ const accountNavGroup: NavGroup = {
     items: [
             {
                 title: 'Payment Report',
-                href: dashboard(),
+                href: paymentReport(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Online Payment Center',
-                href: dashboard(),
+                href: onlinePayment(),
                 icon: LayoutGrid,
             },
     ],
