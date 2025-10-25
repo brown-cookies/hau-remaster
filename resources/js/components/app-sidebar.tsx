@@ -11,7 +11,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
-import { paymentReport, onlinePayment } from '@/routes/student'
+import { paymentReport, onlinePayment, studentProfile, studentLedger, basicEducationEnrollment, collegeSelfEnrollment, displayClassSchedule, subjectInquiry, facultyEvaluation, accessCatalog, displayClassRecords, displayGrades } from '@/routes/student'
 import { type NavItem, type NavGroup } from '@/types';
 import { Link } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
@@ -46,12 +46,12 @@ const studentInformationNavGroup: NavGroup = {
     items: [
             {
                 title: 'Student Profile',
-                href: dashboard(),
+                href: studentProfile(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Student Ledger',
-                href: dashboard(),
+                href: studentLedger(),
                 icon: LayoutGrid,
             },
     ],
@@ -62,22 +62,22 @@ const enrollmentNavGroup: NavGroup = {
     items: [
             {
                 title: 'College Self Enrollment',
-                href: dashboard(),
+                href: collegeSelfEnrollment(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Display Class Schedule',
-                href: dashboard(),
+                href: displayClassSchedule(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Subject Schedule Inquiry',
-                href: dashboard(),
+                href: subjectInquiry(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Basic Education Enrollment',
-                href: dashboard(),
+                href: basicEducationEnrollment(),
                 icon: LayoutGrid,
             },
     ],
@@ -88,7 +88,7 @@ const studentServicesNavGroup: NavGroup = {
     items: [
         {
             title: 'Faculty Evaluation',
-            href: dashboard(),
+            href: facultyEvaluation(),
             icon: LayoutGrid,
         },
     ],
@@ -99,12 +99,12 @@ const studentPerformanceNavGroup: NavGroup = {
     items: [
             {
                 title: 'Display Grades',
-                href: dashboard(),
+                href: displayGrades(),
                 icon: LayoutGrid,
             },
             {
                 title: 'Display Class Records',
-                href: dashboard(),
+                href: displayClassRecords(),
                 icon: LayoutGrid,
             },
     ],
@@ -115,7 +115,7 @@ const librarySupportNavGroup: NavGroup = {
     items: [
         {
             title: 'Online Public Access Catalog',
-            href: dashboard(),
+            href: accessCatalog(),
             icon: LayoutGrid,
         },
     ],

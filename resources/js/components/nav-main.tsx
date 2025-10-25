@@ -17,6 +17,7 @@ import {
 
 export function NavMain({ items = [], groups = [] }: { items: NavItem[], groups: NavGroup[] }) {
     const page = usePage();
+
     return (
         <>
             <SidebarGroup className="px-2 py-0">
@@ -41,7 +42,7 @@ export function NavMain({ items = [], groups = [] }: { items: NavItem[], groups:
                 </SidebarMenu>
             </SidebarGroup>
             {groups.map((group) => (
-                <Collapsible className="group/collapsible">
+                <Collapsible  className="group/collapsible">
                     <SidebarGroup className='px-2 py-0'>
                         <SidebarGroupLabel asChild>
 
@@ -54,22 +55,24 @@ export function NavMain({ items = [], groups = [] }: { items: NavItem[], groups:
 
                         <CollapsibleContent>
                             <SidebarMenu>
-                                {group.items.map((item) => (
-                                    <SidebarMenuItem key={item.title}>
-                                        <SidebarMenuButton
-                                        asChild
-                                        isActive={page.url.startsWith(
-                                            resolveUrl(item.href),
-                                        )}
-                                        tooltip={{ children: item.title }}
-                                    >
-                                        <Link href={item.href} prefetch>
-                                            {item.icon && <item.icon />}
-                                            <span>{item.title}</span>
-                                        </Link>
-                                    </SidebarMenuButton>
+                                {group.items.map((item) => {
+                                    return (
+                                        <SidebarMenuItem key={item.title}>
+                                            <SidebarMenuButton
+                                                asChild
+                                                isActive={page.url.startsWith(
+                                                    resolveUrl(item.href),
+                                                )}
+                                                tooltip={{ children: item.title }}
+                                             >
+                                            <Link href={item.href} prefetch>
+                                                {item.icon && <item.icon />}
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
                                     </SidebarMenuItem>
-                                ))}
+                                    )
+                                })}
                             </SidebarMenu>
                         </CollapsibleContent>
                     </SidebarGroup>
