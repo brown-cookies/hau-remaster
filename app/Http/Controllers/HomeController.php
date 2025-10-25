@@ -18,4 +18,12 @@ class HomeController extends Controller
             'canRegister' => Features::enabled(Features::registration()),
         ]);
     }
+
+    /**
+     * Summary of dashboard page.
+     * @return \Inertia\Response
+     */
+    public function dashboard() {
+        return Inertia::render('dashboard');
+    }
 }
