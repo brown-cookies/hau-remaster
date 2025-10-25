@@ -1,0 +1,3 @@
+$admin = User::where('name', 'admin')->first();
+
+dump($admin);
