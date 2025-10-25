@@ -24,14 +24,20 @@ class UserForm
                     ->preload()
                     ->searchable()
                     ->required(false),
+                Select::make('permissions')
+                    ->label('Permissions')
+                    ->multiple()
+                    ->relationship('permissions', 'name')
+                    ->preload()
+                    ->searchable()
+                    ->required(false),
                 TextInput::make('email')
                     ->label('Email address')
                     ->email()
                     ->required(),
                 DateTimePicker::make('email_verified_at'),
                 TextInput::make('password')
-                    ->password()
-                    ->required(),
+                    ->password(),
                 Textarea::make('two_factor_secret')
                     ->columnSpanFull(),
                 Textarea::make('two_factor_recovery_codes')

@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        echo "Seeding roles... \n";
+        echo "Seeding roles and permissions... \n";
 
-        $this->call(RoleSeeder::class);
+        $this->call(RolePermissionSeeder::class);
 
-        echo "Done seeding roles.";
+        echo "Done seeding roles and permissions.";
     }
 }
